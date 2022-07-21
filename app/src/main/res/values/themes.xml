@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="AppTheme.MyTheme" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Original AppCompat attributes. -->
         <item name="colorPrimary">@color/md_blue_900</item>
         <item name="colorSecondary">@color/md_blue_500</item>
