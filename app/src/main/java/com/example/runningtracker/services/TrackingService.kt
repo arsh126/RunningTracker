@@ -135,9 +135,13 @@ val notificationActionText = if(isTracking) "Pause" else "Resume"
         }
         val notificationManager= getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        curNotificationBuilder.javaClass.getDeclaredField("mAction").apply {
-            isAccessible=true
-            set(curNotificationBuilder,ArrayList<NotificationCompat.Action>())
+        try {
+            curNotificationBuilder.javaClass.getDeclaredField("mAction").apply {
+                isAccessible = true
+                set(curNotificationBuilder, ArrayList<NotificationCompat.Action>())
+            }
+        }catch (e: Exception){
+            e.printStackTrace()
         }
         if(!serviceKilled){
             curNotificationBuilder = baseNotificationBuilder.addAction(R.drawable.ic_pause_black_24dp,notificationActionText,pendingIntent)
